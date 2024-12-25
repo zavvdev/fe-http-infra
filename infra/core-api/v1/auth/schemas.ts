@@ -4,9 +4,8 @@ import * as yup from "yup";
 
 export const loginSchema = {
   request: yup.object({
-    phone: yup.string().required(),
+    email: yup.string().email().required(),
     password: yup.string().required(),
-    otp: yup.string().required(),
   }),
   response: yup.object({
     access_token: yup.string().required(),
@@ -24,7 +23,7 @@ export const registerSchema = {
     lastname: yup.string().required(),
     email: yup.string().email().required(),
     password: yup.string().required(),
-    address: yup.string().required(),
+    password_confirmation: yup.string().required(),
   }),
 };
 
